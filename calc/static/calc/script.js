@@ -14,7 +14,9 @@ function test(){
             url: "/show",
             statusCode:{
                 200:function(e){
-                    $(".modal-body").html(e["value"]);
+                    $(".modal-body").html("");
+                    $(".modal-body").append("<p> Sum:"+e["value"]+"</p>");
+                    $(".modal-body").append("<p> Discont"+e["discont"]+"</p>");
     
                 }
             }
@@ -70,7 +72,8 @@ function test(){
                                 var data=JSON.stringify(e);
                                 console.log(typeof(data))
                                 console.log(parseInt(e["value"]))
-                                $(".modal-body").html(e["value"]);
+                                $(".modal-body").append("<p> Sum:"+e["value"]+"</p>");
+                                $(".modal-body").append("<p> Discont"+e["discont"]+"</p>");
                                 test();
                             }
                         }

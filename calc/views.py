@@ -23,21 +23,26 @@ def index(request):
     return HttpResponse(template.render())
 
 @csrf_exempt
-def test(request):
+def buy(request):
     global body
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
 
     #Делаем что-то с json. возвращаем словарь
-    some_dict={'value': 123}
+    #{'tokenSale': , 'tokensHave': , 'tokensToSale': , 'tokenBuy': }
+
+    some_dict={'discont': str(122), 'value': str(122)}
     return JsonResponse(some_dict)
 
 
 @csrf_exempt
-def buy(request):
+def show(request):
     global body
     print(body)
-    some_dict={'value': 213}
+    #asasasa
+
+    #{'discont': ,'value': }
+    some_dict={'discont': str(122), 'value': str(122)}
     return JsonResponse(some_dict)
     
 global body

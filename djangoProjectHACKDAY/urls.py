@@ -20,6 +20,6 @@ import calc.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('buy', views.test),
-    path('show', views.buy)
+    path('buy', views.buy),
+    path('show', views.show)
 ]
